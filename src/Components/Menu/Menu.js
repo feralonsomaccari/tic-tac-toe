@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Menu.module.css";
+import Button from "./Button";
 
 const Home = () => {
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
 
-  const [playEnabled, setPlayEnabled] = useState(false)
+  const [playDisabled, setPlayDisabled] = useState(false);
 
-  useEffect( () => {
-    if (player1.length && player2.length) {
-      setPlayEnabled(true);
+  useEffect(() => {
+    if (!player1.length || !player2.length) {
+      setPlayDisabled(true);
     } else {
-      setPlayEnabled(false);
+      setPlayDisabled(false);
     }
-  }, [player1, player2])
+  }, [player1, player2]);
 
   return (
     <article className={styles.menu}>
@@ -24,15 +25,21 @@ const Home = () => {
       <section className={styles.menu__container}>
         <div className={styles.menu__form}>
           <label for="player1">Player 1</label>
-          <input id="player1" onChange={(e) => setPlayer1(e.target.value)}></input>
+          <input
+            id="player1"
+            onChange={(e) => setPlayer1(e.target.value)}
+          ></input>
         </div>
         <div className={styles.menu__form}>
           <label for="player2">Player 2</label>
-          <input id="player2" onChange={(e) => setPlayer2(e.target.value)}></input>
+          <input
+            id="player2"
+            onChange={(e) => setPlayer2(e.target.value)}
+          ></input>
         </div>
 
-        <button className={`${styles.menu__button} ${!playEnabled && styles['menu__boton--disabled']}`}>PLAY</button>
-        <button className={styles.menu__button}>LEADERBOARD</button>
+        <Button disabled={playDisabled}>PLAY</Button>
+        <Button>LEADERBOARD</Button>
       </section>
     </article>
   );
