@@ -12,7 +12,16 @@ const Home = () => {
       <h3 className={styles.menu__subtitle}>MAIN MENU</h3>
 
       <section className={styles.menu__container}>
-        <button className={styles.menu__button}>PLAY</button>
+        <div className={styles.menu__form}>
+          <label for="player1">Player 1</label>
+          <input id="player1" onChange={(e) => setPlayer1(e)}></input>
+        </div>
+        <div className={styles.menu__form}>
+          <label for="player2">Player 2</label>
+          <input id="player2" onChange={(e) => setPlayer2(e)}></input>
+        </div>
+
+        <button className={`${styles.menu__button} ${styles['menu__boton--disabled']}`}>PLAY</button>
         <button className={styles.menu__button}>LEADERBOARD</button>
       </section>
     </article>
@@ -20,15 +29,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-  /* <div className={styles.menu__form}>
-          <label for="player1">Player 1</label>
-          <input id="player1" onChange={(e) => setPlayer1(e)}></input>
-        </div>
-
-        <div className={styles.menu__form}>
-          <label for="player2">Player 2</label>
-          <input id="player2" onChange={(e) => setPlayer2(e)}></input>
-        </div> */
-}
