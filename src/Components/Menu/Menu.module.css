@@ -1,0 +1,86 @@
+.menu {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.menu__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+}
+
+.menu__title {
+  text-align: center;
+  margin: 0;
+  color: #776e66;
+  font-size: 3em;
+}
+
+.menu__subtitle,
+.menu__button {
+  width: 200px;
+  height: 40px;
+  background: #bbae9f;
+  border-radius: 3px;
+  outline: 0;
+  border: none;
+  box-shadow: 0px 4px #777067;
+  color: #fbf8ee;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu__subtitle {
+  background-color: #777067;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  box-shadow: none;
+  justify-content: center;
+  border-radius: 0;
+  margin-top: 30px;
+  cursor: default;
+}
+
+.menu__button:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
+}
+
+.menu__form input {
+  margin-left: 10px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 980px) {
+  .menu__title {
+    font-size: 5em;
+  }
+
+  .menu__subtitle {
+    width: 500px;
+  }
+
+  .menu__button {
+    height: 100px;
+    width: 500px;
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+}
