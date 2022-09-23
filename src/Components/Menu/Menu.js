@@ -24,8 +24,8 @@ const Home = () => {
 
       <section className={styles.menu__container}>
         {/* Player Names */}
-        <Form inputName="player1" setInput={setPlayer1} />
-        <Form inputName="player2" setInput={setPlayer2} />
+        <Form inputName="player1" placeholder="Player 1" setInput={setPlayer1} />
+        <Form inputName="player2" placeholder="Player 2" setInput={setPlayer2} />
 
         {/* Menu Options */}
         <Button disabled={playDisabled}>PLAY</Button>
