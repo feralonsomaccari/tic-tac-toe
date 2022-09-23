@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Board.module.css";
 
-const Square = ({ handleSquareClick, currentPlayer }) => {
+const Square = ({ position, handleSquareClick, currentPlayer }) => {
   const [mark, setMark] = useState("");
 
   const handleClick = () => {
     setMark(currentPlayer);
-    handleSquareClick();
+    handleSquareClick(position);
   };
 
   return (
