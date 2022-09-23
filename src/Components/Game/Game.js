@@ -1,34 +1,26 @@
 import React, { useState } from "react";
 import styles from "./Game.module.css";
 import Board from "../Board/Board";
+import Score from "./Score";
 
-const Game = ({player1Name = '', player2Name = ''}) => {
+const Game = ({ player1Name = "", player2Name = "" }) => {
   const [player1Score, setPlayer1Score] = useState(0);
   const [player2Score, setPlayer2Score] = useState(0);
   const [tieScore, setTieScore] = useState(0);
 
   return (
     <article className={styles.game}>
-      
       {/* Score Section */}
-      <section className={styles.game__score}>
-        <p className={styles.game__player}>
-          <span>PLAYER 1 ({player1Name})</span>
-          <span>{player1Score}</span>
-        </p>
-        <p className={styles.game__player}>
-          <span>TIE </span>
-          <span>{tieScore}</span>
-        </p>
-        <p className={styles.game__player}>
-          <span>PLAYER 2 ({player2Name})</span>
-          <span>{player2Score}</span>
-        </p>
-      </section>
-
+      <Score
+        player1Name={player1Name}
+        player1Score={player1Score}
+        player2Name={player2Name}
+        player2Score={player2Score}
+        tieScore={tieScore}
+      />
+      
       {/* Tic tac toe Board */}
-      <Board/>
-     
+      <Board />
     </article>
   );
 };
