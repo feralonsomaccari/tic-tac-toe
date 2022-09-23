@@ -37,8 +37,7 @@ const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
   useEffect(() => {
     const checkBoard = () => {
       const isXvictoryLine = checkVictory('X', board);
-      const isOvictoryLine = checkVictory('X', board);
-
+      const isOvictoryLine = checkVictory('O', board);
       if (isXvictoryLine) {
         setWinningLine(isXvictoryLine)
         setPlayer1Score(score => score + 1)
