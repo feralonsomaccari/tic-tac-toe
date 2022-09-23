@@ -2,11 +2,12 @@
   width: 300px;
   height: 300px;
   margin: 0 auto;
-  background: #baad9f;
+  background: #776e66;
   gap: 5px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   position: relative;
+  animation: popin 1s;
 }
 
 .board__square {
@@ -83,5 +84,14 @@
   }
   100% {
     color: #776e66;
+  }
+}
+
+@keyframes popin {
+  0% {
+    clip-path: circle(0%);
+  }
+  100% {
+    clip-path: circle(100%);
   }
 }
