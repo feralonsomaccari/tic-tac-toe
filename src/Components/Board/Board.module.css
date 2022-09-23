@@ -29,13 +29,20 @@
   animation: appear 0.2s cubic-bezier(0.5, 1.8, 0.1, 1.1);
 }
 
+.board__mark.X {
+  color: #f59564;
+}
+.board__mark.O {
+  color: #7764f5;
+}
+
 .board__mark--blinking {
   will-change: transform;
   animation: blinking .8s infinite cubic-bezier(0.5, 1.8, 0.1, 1.1);
 }
 
 .board__mark--off {
-  color: #776e6637;
+  opacity: 0.3;
 }
 
 .board__restartOverlay {
@@ -62,7 +69,7 @@
 
 @keyframes appear {
   from {
-    transform: scale(0.3);
+    transform: scale(0);
   }
   to {
     transform: scale(1);
@@ -71,19 +78,19 @@
 
 @keyframes blinking {
   0% {
-    color: #776e66;
+    opacity: 1;
   }
   49% {
-    color: #776e66;
+    opacity: 1;
   }
   60% {
-    color: transparent;
+    opacity: 0;
   }
   99% {
-    color: transparent;
+    opacity: 0;
   }
   100% {
-    color: #776e66;
+    opacity: 1;
   }
 }
 

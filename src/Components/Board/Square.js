@@ -18,6 +18,7 @@ const Square = ({ position, handleSquareClick, currentPlayer, gameCounter, isGam
       {mark && 
       <span className={
         `${styles.board__mark} 
+        ${styles[mark]} 
         ${isGameOver && (winningLine.includes(position) ? styles['board__mark--blinking'] : styles['board__mark--off'])}`}>
         {mark}
       </span>}
