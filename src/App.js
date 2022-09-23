@@ -1,5 +1,5 @@
 //import Menu from './Components/Menu/Menu'
-//import Game from './Components/Game/Game'
+import Game from './Components/Game/Game'
 
 function App() {
   return (
