@@ -23,8 +23,13 @@ const Board = () => {
 
   /* Check victory after every move */
   useEffect(() => {
-      if (checkVictory('X', board)) console.log("Player 1 Victory");
-      else if (checkVictory('O', board)) console.log("Player 2 Victory");
+    const checkBoard = () => {
+      if (checkVictory('X', board)) return console.log("Player 2 Victory")
+      if (checkVictory('O', board)) return console.log("Player 2 Victory")
+      if(!board.some(value => value === null)) return console.log("Tie")
+    }
+    checkBoard()
+
   }, [board]);
 
   return (
@@ -32,14 +37,12 @@ const Board = () => {
       {
         /* Render 9 squares in the Grid */
         Array(9).fill().map((_, index) => (
-            <Square
-              key={index}
-              position={index}
-              handleSquareClick={handleSquareClick}
-              currentPlayer={currentPlayer}
-            />
-          )
-        )
+          <Square
+            key={index}
+            position={index}
+            handleSquareClick={handleSquareClick}
+            currentPlayer={currentPlayer} />
+        ))
       }
     </section>
   );
