@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -25,6 +26,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.game__score {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  width: 450px;
+  color:#776e66;
+}
+
+.game__player span {
+  display: block;
+  text-align: center;
+  
 }
 
 @media only screen and (max-width: 620px) {
