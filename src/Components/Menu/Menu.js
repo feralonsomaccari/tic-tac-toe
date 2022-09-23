@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Menu.module.css";
 import Button from "./Button";
+import Form from "./Form";
 
 const Home = () => {
   const [player1, setPlayer1] = useState("");
@@ -19,25 +20,14 @@ const Home = () => {
   return (
     <article className={styles.menu}>
       <h1 className={styles.menu__title}>TIC-TAC-TOE</h1>
-
       <h3 className={styles.menu__subtitle}>MAIN MENU</h3>
 
       <section className={styles.menu__container}>
-        <div className={styles.menu__form}>
-          <label for="player1">Player 1</label>
-          <input
-            id="player1"
-            onChange={(e) => setPlayer1(e.target.value)}
-          ></input>
-        </div>
-        <div className={styles.menu__form}>
-          <label for="player2">Player 2</label>
-          <input
-            id="player2"
-            onChange={(e) => setPlayer2(e.target.value)}
-          ></input>
-        </div>
+        {/* Player Names */}
+        <Form inputName="player1" setInput={setPlayer1} />
+        <Form inputName="player2" setInput={setPlayer2} />
 
+        {/* Menu Options */}
         <Button disabled={playDisabled}>PLAY</Button>
         <Button>LEADERBOARD</Button>
       </section>

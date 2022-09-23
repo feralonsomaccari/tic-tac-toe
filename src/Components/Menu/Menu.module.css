@@ -65,17 +65,7 @@
   top: 0;
 }
 
-.menu__form {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu__form label {
-  color: #776e66;
-  font-weight: bold;
-}
-
-.menu__form input {
+.menu__input {
   margin: 0;
   padding: 10px;
   border-radius: 8px;
@@ -100,7 +90,7 @@
     font-size: 2em;
   }
 
-  .menu__form input {
+  .menu__input {
     padding: 20px;
     font-size: 1.5em;
     width: 500px;
