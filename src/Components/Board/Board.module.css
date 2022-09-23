@@ -2,7 +2,6 @@
   width: 300px;
   height: 300px;
   margin: 0 auto;
-  color: #776e66;
   background: #baad9f;
   gap: 5px;
   display: grid;
@@ -14,10 +13,12 @@
   border-radius: 2px;
   font-family: Helvetica;
   font-size: 2em;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: none;
+  border: none;
+  color: #776e66;
 }
 
 @media only screen and (min-width: 620px) {
