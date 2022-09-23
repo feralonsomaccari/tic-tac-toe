@@ -25,8 +25,16 @@
 
 .board__mark {
   will-change: transform;
-  transform: translate3d(0, 0, 0);
   animation: appear 0.2s cubic-bezier(0.5, 1.8, 0.1, 1.1);
+}
+
+.board__mark--blinking {
+  will-change: transform;
+  animation: blinking .8s infinite cubic-bezier(0.5, 1.8, 0.1, 1.1);
+}
+
+.board__mark--off {
+  color: #776e6637;
 }
 
 .board__restartOverlay {
@@ -57,5 +65,23 @@
   }
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes blinking {
+  0% {
+    color: #776e66;
+  }
+  49% {
+    color: #776e66;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: #776e66;
   }
 }

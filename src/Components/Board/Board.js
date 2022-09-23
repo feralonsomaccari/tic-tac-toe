@@ -14,6 +14,7 @@ const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
   const [board, setBoard] = useState(BOARD_LAYOUT);
   const [isGameOver, setIsGameOver] = useState(false)
   const [gameCounter, setGameCounter] = useState(1)
+  const [winningLine, setWinningLine] = useState([])
 
   const handleSquareClick = (position) => {
     if (currentPlayer === "X") setCurrentPlayer("O");
@@ -28,18 +29,23 @@ const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
     setIsGameOver(false)
     setBoard(BOARD_LAYOUT)
     setCurrentPlayer('X')
-    console.log("handleRestartClick")
+    setWinningLine([])
     setGameCounter(counter => counter + 1)
   }
 
   /* Check victory after every move */
   useEffect(() => {
     const checkBoard = () => {
-      if (checkVictory('X', board)) { 
+      const isXvictoryLine = checkVictory('X', board);
+      const isOvictoryLine = checkVictory('X', board);
+
+      if (isXvictoryLine) {
+        setWinningLine(isXvictoryLine)
         setPlayer1Score(score => score + 1)
         return setIsGameOver(true)
       }
-      if (checkVictory('O', board)) {
+      if (isOvictoryLine) {
+        setWinningLine(isOvictoryLine)
         setPlayer2Score(score => score + 1)
         return setIsGameOver(true)
       }
@@ -63,7 +69,9 @@ const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
             position={index}
             handleSquareClick={handleSquareClick}
             currentPlayer={currentPlayer}
-            gameCounter={gameCounter} />
+            gameCounter={gameCounter}
+            isGameOver={isGameOver} 
+            winningLine={winningLine}/>
         ))
       }
     </section>
