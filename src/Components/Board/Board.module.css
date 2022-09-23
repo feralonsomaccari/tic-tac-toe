@@ -12,7 +12,6 @@
 .board__square {
   background-color: #faf8ee;
   border-radius: 2px;
-  font-family: Helvetica;
   font-size: 2em;
   display: flex;
   justify-content: center;
@@ -21,6 +20,7 @@
   border: none;
   color: #776e66;
   cursor: pointer;
+  font-family: 'Fredoka One', cursive;
 }
 
 .board__restartOverlay {
