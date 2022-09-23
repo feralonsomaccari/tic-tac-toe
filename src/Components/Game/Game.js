@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Game.module.css";
+import Board from "../Board/Board";
 
 const Game = ({player1Name = '', player2Name = ''}) => {
   const [player1Score, setPlayer1Score] = useState(0);
@@ -8,8 +9,8 @@ const Game = ({player1Name = '', player2Name = ''}) => {
 
   return (
     <article className={styles.game}>
+      
       {/* Score Section */}
-
       <section className={styles.game__score}>
         <p className={styles.game__player}>
           <span>PLAYER 1 ({player1Name})</span>
@@ -25,18 +26,9 @@ const Game = ({player1Name = '', player2Name = ''}) => {
         </p>
       </section>
 
-      {/* Tic tac toe board */}
-      <section className={styles.board}>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-        <div className={styles.board__square}>X</div>
-      </section>
+      {/* Tic tac toe Board */}
+      <Board/>
+     
     </article>
   );
 };
