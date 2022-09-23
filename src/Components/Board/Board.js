@@ -3,7 +3,7 @@ import styles from "./Board.module.css";
 import Square from "./Square";
 import {checkVictory} from './_utils'
 
-const Board = () => {
+const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
 
   const [board, setBoard] = useState([
@@ -24,9 +24,9 @@ const Board = () => {
   /* Check victory after every move */
   useEffect(() => {
     const checkBoard = () => {
-      if (checkVictory('X', board)) return console.log("Player 2 Victory")
-      if (checkVictory('O', board)) return console.log("Player 2 Victory")
-      if(!board.some(value => value === null)) return console.log("Tie")
+      if (checkVictory('X', board)) return setPlayer1Score(score => score +1)
+      if (checkVictory('O', board)) return setPlayer2Score(score => score +1)
+      if(!board.some(value => value === null)) return setTieScore(score => score +1)
     }
     checkBoard()
 
