@@ -28,6 +28,7 @@ const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
     setIsGameOver(false)
     setBoard(BOARD_LAYOUT)
     setCurrentPlayer('X')
+    console.log("handleRestartClick")
     setGameCounter(counter => counter + 1)
   }
 

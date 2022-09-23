@@ -15,7 +15,9 @@ const Square = ({ position, handleSquareClick, currentPlayer, gameCounter}) => {
 
   return (
     <button className={styles.board__square} onClick={handleClick} disabled={mark}>
-      {mark}
+      {mark && <span className={styles.board__mark}>
+        {mark}
+      </span>}
     </button>
   );
 };

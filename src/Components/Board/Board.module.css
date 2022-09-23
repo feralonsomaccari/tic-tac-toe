@@ -20,7 +20,13 @@
   border: none;
   color: #776e66;
   cursor: pointer;
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
+}
+
+.board__mark {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: appear 0.2s cubic-bezier(0.5, 1.8, 0.1, 1.1);
 }
 
 .board__restartOverlay {
@@ -31,6 +37,7 @@
   left: 0;
   background-color: transparent;
   cursor: pointer;
+  z-index: 9;
 }
 
 @media only screen and (min-width: 620px) {
@@ -41,5 +48,14 @@
 
   .board__square {
     font-size: 7em;
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
   }
 }
