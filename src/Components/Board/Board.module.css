@@ -1,6 +1,6 @@
 .board {
-  width: 450px;
-  height: 450px;
+  width: 300px;
+  height: 300px;
   margin: 0 auto;
   color: #776e66;
   background: #baad9f;
@@ -13,22 +13,20 @@
   background-color: #faf8ee;
   border-radius: 2px;
   font-family: Helvetica;
-  font-size: 7em;
+  font-size: 2em;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (min-width: 620px) {
   .board {
-    width: 300px;
-    height: 300px;
-    color: #776e66;
-    border: 3px solid #bbae9f;
+    width: 450px;
+    height: 450px;
   }
 
   .board__square {
-    border: 3px solid #bbae9f;
-    font-size: 2em;
+    font-size: 7em;
   }
 }
