@@ -9,7 +9,7 @@ const BOARD_LAYOUT = [
   null, null, null,
 ]
 
-const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
+const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => ''}) => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [board, setBoard] = useState(BOARD_LAYOUT);
   const [isGameOver, setIsGameOver] = useState(false)
@@ -59,7 +59,7 @@ const Board = ({setPlayer1Score, setPlayer2Score, setTieScore}) => {
 
   return (
     <section className={styles.board}>
-      {isGameOver && <div className={styles.board__restartOverlay} onClick={handleRestartClick}></div>}
+      {isGameOver && <div className={styles.board__restartOverlay} onClick={handleRestartClick} data-testid="restart-overlay"></div>}
       {
         /* Render 9 squares in the Grid */
         board.map((_, index) => (
