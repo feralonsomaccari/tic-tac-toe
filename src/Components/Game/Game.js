@@ -37,6 +37,19 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
     setPlayer2Mark(temp1);
   };
  
+  /* Check Game's history */
+  useEffect(() => {
+    if (gameHistory.length) {
+      const playersMatches = gameHistory.filter((game) => game.player1 === player1Name).filter((game) => game.player2 === player2Name);
+      if(playersMatches){
+        const lastGame = games.reverse()[0];
+        if (lastGame?.winner === player2Name) {
+          swapPlayersMark();
+        }
+      }
+    }
+  }, []);
+
   return (
     <article className={styles.game}>
       {/* Score Section */}
