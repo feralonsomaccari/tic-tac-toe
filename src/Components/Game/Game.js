@@ -14,6 +14,13 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
 
   const { gameHistory, addToGameHistory } = useContext(GameContext);
 
+  const playScoreAnim = (scoreEl) => {
+    scoreEl.classList.remove([styles['score-anim']]);
+    setTimeout(() => {
+      scoreEl.classList.add(styles['score-anim']);
+    }, 0);
+  }
+
   const updateHistory = (winnerMark) => {
     addToGameHistory({
       player1: player1Name,
@@ -21,10 +28,15 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
       winner: winnerMark ? (player1Mark === winnerMark ? player1Name : player2Name) : 'TIE',
       winnerMark: winnerMark,
     });
-    if(!winnerMark) return setTieScore(score => score + 1)
+    if(!winnerMark) {
+      playScoreAnim(document.querySelector('#tie-score'))
+      return setTieScore(score => score + 1)
+    }
     if(player1Mark === winnerMark) {
+      playScoreAnim(document.querySelector('#player1-score'))
       setPlayer1Score(score => score + 1)
     }else{
+      playScoreAnim(document.querySelector('#player2-score'))
       setPlayer2Score(score => score + 1)
     }
   }

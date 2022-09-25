@@ -31,9 +31,32 @@
   color: #7764f5;
 }
 
+.game__player span.score-anim{
+  will-change: transform;
+  animation: increment .5s 1 cubic-bezier(0.5, 1.8, 0.1, 1.1) ;
+}
+
 @media only screen and (min-width: 620px) {
   .game__score {
     font-size: 1.2em;
     gap: 50px;
+  }
+}
+
+@keyframes increment {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  80% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
   }
 }
