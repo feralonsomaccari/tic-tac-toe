@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Board.module.css";
 import Square from "./Square";
 import {checkVictory} from './_utils'
+import { useContext } from "react";
+import GameContext from "../../GameContext";
 
 const BOARD_LAYOUT = [
   null, null, null,
@@ -15,6 +17,8 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
   const [isGameOver, setIsGameOver] = useState(false)
   const [gameCounter, setGameCounter] = useState(1)
   const [winningLine, setWinningLine] = useState([])
+
+  const {player1History, addToPlayer1History, gameId, setGameId} = useContext(GameContext)
 
   const handleSquareClick = (position) => {
     if (currentPlayer === "X") setCurrentPlayer("O");
@@ -33,6 +37,11 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
     setGameCounter(counter => counter + 1)
   }
 
+  useEffect(() => {
+    console.log("player1History")
+    console.log(player1History)
+  }, [])
+
   /* Check victory after every move */
   useEffect(() => {
     const checkBoard = () => {
@@ -41,6 +50,9 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
       if (isXvictoryLine) {
         setWinningLine(isXvictoryLine)
         setPlayer1Score(score => score + 1)
+        addToPlayer1History({
+
+        })
         return setIsGameOver(true)
       }
       if (isOvictoryLine) {
