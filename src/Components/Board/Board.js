@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./Board.module.css";
 import Square from "./Square";
 import {checkVictory} from './_utils'
-import { useContext } from "react";
-import GameContext from "../../GameContext";
 
 const BOARD_LAYOUT = [
   null, null, null,
@@ -11,14 +9,12 @@ const BOARD_LAYOUT = [
   null, null, null,
 ]
 
-const Board = ({player1Name, player2Name, setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => ''}) => {
+const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => '', reversePlayers = () => ''}) => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [board, setBoard] = useState(BOARD_LAYOUT);
   const [isGameOver, setIsGameOver] = useState(false)
   const [gameCounter, setGameCounter] = useState(1)
   const [winningLine, setWinningLine] = useState([])
-
-  const {gameHistory, addToGameHistory} = useContext(GameContext)
 
   const handleSquareClick = (position) => {
     if (currentPlayer === "X") setCurrentPlayer("O");
@@ -45,33 +41,18 @@ const Board = ({player1Name, player2Name, setPlayer1Score = () => '', setPlayer2
       if (isXvictoryLine) {
         setWinningLine(isXvictoryLine)
         setPlayer1Score(score => score + 1)
-        addToGameHistory({
-          player1: player1Name,
-          player2: player2Name,
-          winner: player1Name,
-          winnerMark: 'X'
-        })
+        
         return setIsGameOver(true)
       }
       if (isOvictoryLine) {
         setWinningLine(isOvictoryLine)
         setPlayer2Score(score => score + 1)
-        addToGameHistory({
-          player1: player1Name,
-          player2: player2Name,
-          winner: player1Name,
-          winnerMark: 'O'
-        })
+        
         return setIsGameOver(true)
       }
       if(board.every(value => value !== null)) {
         setTieScore(score => score + 1)
-        addToGameHistory({
-          player1: player1Name,
-          player2: player2Name,
-          winner: 'TIE',
-          winnerMark: null
-        })
+        
         return setIsGameOver(true)
       }
     }
