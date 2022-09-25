@@ -9,7 +9,7 @@ const BOARD_LAYOUT = [
   null, null, null,
 ]
 
-const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => '', swapPlayersMark = () => '', updateHistory = () => ''}) => {
+const Board = ({swapPlayersMark = () => '', updateHistory = () => ''}) => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [board, setBoard] = useState(BOARD_LAYOUT);
   const [isGameOver, setIsGameOver] = useState(false)
@@ -49,7 +49,7 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
         updateHistory('O')
         return setIsGameOver(true)
       }
-      if(board.every(value => value !== null)) {
+      if(board.every(value => value !== null)) { // If every square is marked - is a Tie
         updateHistory(null)
         return setIsGameOver(true)
       }
@@ -60,7 +60,7 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
 
   return (
     <section className={styles.board}>
-      {isGameOver && <div className={styles.board__restartOverlay} onClick={handleRestartClick} data-testid="restart-overlay"></div>}
+      {isGameOver && <div className={styles.board__restartOverlay} onClick={handleRestartClick} data-testid="restart-overlay"/>}
       {
         /* Render 9 squares in the Grid */
         board.map((_, index) => (
