@@ -9,7 +9,7 @@ const BOARD_LAYOUT = [
   null, null, null,
 ]
 
-const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => '', reversePlayers = () => ''}) => {
+const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => '', swapPlayersMark = () => '', updateHistory = () => ''}) => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [board, setBoard] = useState(BOARD_LAYOUT);
   const [isGameOver, setIsGameOver] = useState(false)
@@ -31,6 +31,7 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
     setCurrentPlayer('X')
     setWinningLine([])
     setGameCounter(counter => counter + 1)
+    swapPlayersMark()
   }
 
   /* Check victory after every move */
@@ -40,19 +41,16 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
       const isOvictoryLine = checkVictory('O', board);
       if (isXvictoryLine) {
         setWinningLine(isXvictoryLine)
-        setPlayer1Score(score => score + 1)
-        
+        updateHistory('X')
         return setIsGameOver(true)
       }
       if (isOvictoryLine) {
         setWinningLine(isOvictoryLine)
-        setPlayer2Score(score => score + 1)
-        
+        updateHistory('O')
         return setIsGameOver(true)
       }
       if(board.every(value => value !== null)) {
-        setTieScore(score => score + 1)
-        
+        updateHistory(null)
         return setIsGameOver(true)
       }
     }

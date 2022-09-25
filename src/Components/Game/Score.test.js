@@ -24,7 +24,7 @@ describe("<Score/>", () => {
     render(<Score player1Name="Fer" player1Score={5} />);
 
     const player1Name = screen.getByTestId("player1-name");
-    expect(player1Name.textContent).toBe("PLAYER 1 (Fer)");
+    expect(player1Name.textContent).toBe("Fer ()");
 
     const player1Score = screen.getByTestId("player1-score");
     expect(player1Score.textContent).toBe("5");
@@ -34,7 +34,7 @@ describe("<Score/>", () => {
     render(<Score player2Name="Fer" player2Score={5} />);
 
     const player2Name = screen.getByTestId("player2-name");
-    expect(player2Name.textContent).toBe("PLAYER 2 (Fer)");
+    expect(player2Name.textContent).toBe("Fer ()");
 
     const player2Score = screen.getByTestId("player2-score");
     expect(player2Score.textContent).toBe("5");

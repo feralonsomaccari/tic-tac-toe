@@ -23,6 +23,14 @@
   margin-bottom: 20px;
 }
 
+.game__player span.X {
+  color:#f59564
+}
+
+.game__player span.O {
+  color: #7764f5;
+}
+
 @media only screen and (min-width: 620px) {
   .game__score {
     font-size: 1.2em;

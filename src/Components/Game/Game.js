@@ -6,6 +6,8 @@ import { useContext } from "react";
 import GameContext from "../../GameContext";
 
 const Game = ({ player1Name = "", player2Name = "" }) => {
+  const [player1Mark, setPlayer1Mark] = useState("X");
+  const [player2Mark, setPlayer2Mark] = useState("O");
   const [player1Score, setPlayer1Score] = useState(0);
   const [player2Score, setPlayer2Score] = useState(0);
   const [tieScore, setTieScore] = useState(0);
@@ -13,33 +15,39 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
   const { gameHistory, addToGameHistory } = useContext(GameContext);
 
   const updateHistory = (winnerMark) => {
+    console.log(gameHistory)
     addToGameHistory({
       player1: player1Name,
       player2: player2Name,
-      winner: winnerMark ? (winnerMark === 'X' ? player1Name : player2Name) : 'TIE',
+      winner: winnerMark ? (player1Mark === winnerMark ? player1Name : player2Name) : 'TIE',
       winnerMark: winnerMark,
     });
+    if(!winnerMark) return setTieScore(score => score + 1)
+    if(player1Mark === winnerMark) {
+      setPlayer1Score(score => score + 1)
+    }else{
+      setPlayer2Score(score => score + 1)
+    }
   }
- 
-  useEffect(() => {
-    if (player1Score !== 0) updateHistory('X')
-  }, [player1Score]);
-  useEffect(() => {
-    if (tieScore !== 0) updateHistory('O')
-  }, [tieScore]);
-  useEffect(() => {
-    if (player2Score !== 0) updateHistory(null)
-  }, [player2Score]);
 
+  const swapPlayersMark = () => {
+    const temp1 = player1Mark;
+    const temp2 = player2Mark;
+    setPlayer1Mark(temp2);
+    setPlayer2Mark(temp1);
+  };
+ 
   return (
     <article className={styles.game}>
       {/* Score Section */}
       <Score
-        player1Name={player1}
+        player1Name={player1Name}
         player1Score={player1Score}
-        player2Name={player2}
+        player2Name={player2Name}
         player2Score={player2Score}
         tieScore={tieScore}
+        player1Mark={player1Mark}
+        player2Mark={player2Mark}
       />
 
       {/* Tic tac toe Board */}
@@ -47,6 +55,8 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
         setPlayer1Score={setPlayer1Score}
         setPlayer2Score={setPlayer2Score}
         setTieScore={setTieScore}
+        updateHistory={updateHistory}
+        swapPlayersMark={swapPlayersMark}
       />
     </article>
   );
