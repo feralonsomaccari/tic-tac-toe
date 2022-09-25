@@ -15,7 +15,6 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
   const { gameHistory, addToGameHistory } = useContext(GameContext);
 
   const updateHistory = (winnerMark) => {
-    console.log(gameHistory)
     addToGameHistory({
       player1: player1Name,
       player2: player2Name,
@@ -42,7 +41,7 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
     if (gameHistory.length) {
       const playersMatches = gameHistory.filter((game) => game.player1 === player1Name).filter((game) => game.player2 === player2Name);
       if(playersMatches){
-        const lastGame = games.reverse()[0];
+        const lastGame = playersMatches.reverse()[0];
         if (lastGame?.winner === player2Name) {
           swapPlayersMark();
         }
