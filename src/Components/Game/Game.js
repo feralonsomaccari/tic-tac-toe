@@ -20,7 +20,7 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
       />
       
       {/* Tic tac toe Board */}
-      <Board setPlayer1Score={setPlayer1Score} setPlayer2Score={setPlayer2Score} setTieScore={setTieScore}/>
+      <Board player1Name={player1Name} player2Name={player2Name} setPlayer1Score={setPlayer1Score} setPlayer2Score={setPlayer2Score} setTieScore={setTieScore}/>
     </article>
   );
 };

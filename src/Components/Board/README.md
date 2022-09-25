@@ -11,6 +11,8 @@ https://en.wikipedia.org/wiki/Magic_square
 
 | Property       | Type                            | Default | Description            |
 | :------------- | ------------------------------- | :------ | :--------------------- |
+| **playerName** | `string` | `''`    | Player 1 name |
+| **player2Name** | `string` | `''`    | Player 2 name. |
 | **setPlayer1Score** | `function` | `''`    | Function that sets the score of Player 1. |
 | **setPlayer2Score** | `function` | `''`    | Function that sets the score of Player 2. |
 | **setTieScore** | `function` | `''`    | Function that sets the score of Ties. |

@@ -11,14 +11,14 @@ const BOARD_LAYOUT = [
   null, null, null,
 ]
 
-const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => ''}) => {
+const Board = ({player1Name, player2Name, setPlayer1Score = () => '', setPlayer2Score = () => '', setTieScore = () => ''}) => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [board, setBoard] = useState(BOARD_LAYOUT);
   const [isGameOver, setIsGameOver] = useState(false)
   const [gameCounter, setGameCounter] = useState(1)
   const [winningLine, setWinningLine] = useState([])
 
-  const {player1History, addToPlayer1History, gameId, setGameId} = useContext(GameContext)
+  const {gameHistory, addToGameHistory} = useContext(GameContext)
 
   const handleSquareClick = (position) => {
     if (currentPlayer === "X") setCurrentPlayer("O");
@@ -37,11 +37,6 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
     setGameCounter(counter => counter + 1)
   }
 
-  useEffect(() => {
-    console.log("player1History")
-    console.log(player1History)
-  }, [])
-
   /* Check victory after every move */
   useEffect(() => {
     const checkBoard = () => {
@@ -50,18 +45,33 @@ const Board = ({setPlayer1Score = () => '', setPlayer2Score = () => '', setTieSc
       if (isXvictoryLine) {
         setWinningLine(isXvictoryLine)
         setPlayer1Score(score => score + 1)
-        addToPlayer1History({
-
+        addToGameHistory({
+          player1: player1Name,
+          player2: player2Name,
+          winner: player1Name,
+          winnerMark: 'X'
         })
         return setIsGameOver(true)
       }
       if (isOvictoryLine) {
         setWinningLine(isOvictoryLine)
         setPlayer2Score(score => score + 1)
+        addToGameHistory({
+          player1: player1Name,
+          player2: player2Name,
+          winner: player1Name,
+          winnerMark: 'O'
+        })
         return setIsGameOver(true)
       }
       if(board.every(value => value !== null)) {
         setTieScore(score => score + 1)
+        addToGameHistory({
+          player1: player1Name,
+          player2: player2Name,
+          winner: 'TIE',
+          winnerMark: null
+        })
         return setIsGameOver(true)
       }
     }
