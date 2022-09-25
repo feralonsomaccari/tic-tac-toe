@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Board.module.css";
 
-const Square = ({ position, handleSquareClick, currentPlayer, gameCounter, isGameOver, winningLine}) => {
-  const [mark, setMark] = useState("");
+const Square = ({ position, handleSquareClick = () => '', currentPlayer, gameCounter, isGameOver, winningLine}) => {
+  const [mark, setMark] = useState(""); // X o O
 
   useEffect( () => {
     setMark("")
