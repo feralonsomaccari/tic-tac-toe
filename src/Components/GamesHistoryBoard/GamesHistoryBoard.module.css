@@ -1,11 +1,45 @@
-.gameshistoryboard{
-    color: #776e66;
+.gameshistoryboard {
+  color: #776e66;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.gameshistoryboard__list{
-
+.gameshistoryboard__table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
 }
 
-.gameshistoryboard__element{
+.gameshistoryboard__table tr {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.2em;
+    font-family: sans-serif;
+    min-width: 400px;
+    text-align: center;
+}
 
+.gameshistoryboard__table th,
+.gameshistoryboard__table td {
+    padding: 12px 15px;
+}
+
+.gameshistoryboard__tablehead {
+    font-family: "Fredoka One", cursive;
+    background-color: #776e66;
+    color: #fff;
+    border-spacing: 8px 10px;
+
+    border: none;
+}
+
+.gameshistoryboard tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.gameshistoryboard tbody tr:nth-of-type(even) {
+    background-color: #cdbeaf;
 }

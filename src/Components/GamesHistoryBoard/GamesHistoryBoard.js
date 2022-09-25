@@ -23,18 +23,27 @@ const GamesHistoryBoard = () => {
   return (
     <div className={styles.gameshistoryboard}>
       <h1>Games History Board</h1>
-      <ul className={styles.gameshistoryboard__list}>
-        {gameHistory.map((game) => {
-          return (
-            <li className={styles.gameshistoryboard__element}>
-              <span>{game.player1}</span>
-              <span>{game.player2}</span>
-              <span>{game.winner}</span>
-              <span>{game.winnerMark}</span>
-            </li>
-          );
-        })}
-      </ul>
+      <table className={styles.gameshistoryboard__table}>
+        <thead className={styles.gameshistoryboard__tablehead}>
+          <th>Player1</th>
+          <th>Player2</th>
+          <th>Winner</th>
+          <th>Winner Mark</th>
+        </thead>
+        <tbody>
+
+          {gameHistory.map((game, index) => {
+            return (
+              <tr className={styles.gameshistoryboard__element} key={index}>
+                <td>{game.player1}</td>
+                <td>{game.player2}</td>
+                <td>{game.winner}</td>
+                <td>{game.winnerMark}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };
