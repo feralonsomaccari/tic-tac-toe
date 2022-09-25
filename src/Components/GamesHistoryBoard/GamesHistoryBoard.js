@@ -25,8 +25,7 @@ const GamesHistoryBoard = () => {
       <h1>Games History Board</h1>
       <table className={styles.gameshistoryboard__table}>
         <thead className={styles.gameshistoryboard__tablehead}>
-          <th>Player1</th>
-          <th>Player2</th>
+          <th>Players</th>
           <th>Winner</th>
           <th>Winner Mark</th>
         </thead>
@@ -35,8 +34,7 @@ const GamesHistoryBoard = () => {
           {gameHistory.map((game, index) => {
             return (
               <tr className={styles.gameshistoryboard__element} key={index}>
-                <td>{game.player1}</td>
-                <td>{game.player2}</td>
+                <td>{game.player1} vs {game.player2}</td>
                 <td>{game.winner}</td>
                 <td>{game.winnerMark}</td>
               </tr>
