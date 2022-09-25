@@ -1,11 +1,11 @@
-.gameshistoryboard {
+.gamehistoryboard {
   color: #776e66;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.gameshistoryboard__table {
+.gamehistoryboard__table {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
@@ -13,7 +13,7 @@
     min-width: 400px;
 }
 
-.gameshistoryboard__table tr {
+.gamehistoryboard__table tr {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 1.2em;
@@ -22,12 +22,12 @@
     text-align: center;
 }
 
-.gameshistoryboard__table th,
-.gameshistoryboard__table td {
+.gamehistoryboard__table th,
+.gamehistoryboard__table td {
     padding: 12px 15px;
 }
 
-.gameshistoryboard__tablehead {
+.gamehistoryboard__tablehead {
     font-family: "Fredoka One", cursive;
     background-color: #776e66;
     color: #fff;
@@ -36,10 +36,10 @@
     border: none;
 }
 
-.gameshistoryboard tbody tr {
+.gamehistoryboard tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-.gameshistoryboard tbody tr:nth-of-type(even) {
+.gamehistoryboard tbody tr:nth-of-type(even) {
     background-color: #cdbeaf;
 }

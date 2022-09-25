@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./GamesHistoryBoard.module.css";
+import styles from "./GameHistoryBoard.module.css";
 import { useContext } from "react";
 import GameContext from "../../GameContext";
 
-const GamesHistoryBoard = () => {
+const GameHistoryBoard = () => {
   const { gameHistory } = useContext(GameContext);
 
   const dummyObj = {
@@ -21,10 +21,10 @@ const GamesHistoryBoard = () => {
   console.log(gameHistory);
 
   return (
-    <div className={styles.gameshistoryboard}>
-      <h1>Games History Board</h1>
-      <table className={styles.gameshistoryboard__table}>
-        <thead className={styles.gameshistoryboard__tablehead}>
+    <div className={styles.gamehistoryboard}>
+      <h1>Game History Board</h1>
+      <table className={styles.gamehistoryboard__table}>
+        <thead className={styles.gamehistoryboard__tablehead}>
           <th>Players</th>
           <th>Winner</th>
           <th>Winner Mark</th>
@@ -33,7 +33,7 @@ const GamesHistoryBoard = () => {
 
           {gameHistory.map((game, index) => {
             return (
-              <tr className={styles.gameshistoryboard__element} key={index}>
+              <tr className={styles.gamehistoryboard__element} key={index}>
                 <td>{game.player1} vs {game.player2}</td>
                 <td>{game.winner}</td>
                 <td>{game.winnerMark}</td>
@@ -46,4 +46,4 @@ const GamesHistoryBoard = () => {
   );
 };
 
-export default GamesHistoryBoard;
+export default GameHistoryBoard;
