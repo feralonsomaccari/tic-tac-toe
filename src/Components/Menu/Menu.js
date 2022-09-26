@@ -4,10 +4,7 @@ import Button from "./Button";
 import Form from "./Form";
 import { Link } from "react-router-dom";
 
-const Menu = ({setShowNav = () => ''}) => {
-  const [player1, setPlayer1] = useState("");
-  const [player2, setPlayer2] = useState("");
-
+const Menu = ({setShowNav = () => '', player1Name, setPlayerName1, player2Name, setPlayerName2}) => {
   const [playDisabled, setPlayDisabled] = useState(false);
 
   useEffect(() => {
@@ -15,12 +12,12 @@ const Menu = ({setShowNav = () => ''}) => {
   }, []);
 
   useEffect(() => {
-    if (!player1.length || !player2.length) {
+    if (!player1Name.length || !player2Name.length) {
       setPlayDisabled(true);
     } else {
       setPlayDisabled(false);
     }
-  }, [player1, player2]);
+  }, [player1Name, player2Name]);
 
   return (
     <article className={styles.menu}>
@@ -29,8 +26,8 @@ const Menu = ({setShowNav = () => ''}) => {
 
       <section className={styles.menu__container}>
         {/* Player Names */}
-        <Form inputName="player1" placeholder="Player 1" setInput={setPlayer1} />
-        <Form inputName="player2" placeholder="Player 2" setInput={setPlayer2} />
+        <Form inputName="player1" placeholder="Player 1" value={player1Name} setInput={setPlayerName1} />
+        <Form inputName="player2" placeholder="Player 2" value={player2Name} setInput={setPlayerName2} />
 
         {/* Menu Options */}
         <Link to="/game">
