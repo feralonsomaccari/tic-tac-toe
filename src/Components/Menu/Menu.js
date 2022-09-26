@@ -4,11 +4,15 @@ import Button from "./Button";
 import Form from "./Form";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Menu = ({setShowNav = () => ''}) => {
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
 
   const [playDisabled, setPlayDisabled] = useState(false);
+
+  useEffect(() => {
+    setShowNav(false)
+  }, []);
 
   useEffect(() => {
     if (!player1.length || !player2.length) {
@@ -42,4 +46,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Menu;

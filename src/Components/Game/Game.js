@@ -5,7 +5,7 @@ import Score from "./Score";
 import { useContext } from "react";
 import GameContext from "../../GameContext";
 
-const Game = ({ player1Name = "", player2Name = "" }) => {
+const Game = ({ player1Name = "", player2Name = "", setShowNav = () => '' }) => {
   const [player1Mark, setPlayer1Mark] = useState("X");
   const [player2Mark, setPlayer2Mark] = useState("O");
   const [player1Score, setPlayer1Score] = useState(0);
@@ -13,6 +13,10 @@ const Game = ({ player1Name = "", player2Name = "" }) => {
   const [tieScore, setTieScore] = useState(0);
 
   const { gameHistory, addToGameHistory } = useContext(GameContext);
+
+  useEffect(() => {
+    setShowNav(true)
+  }, []);
 
   const playScoreAnim = (scoreEl) => {
     scoreEl.classList.remove([styles['score-anim']]);

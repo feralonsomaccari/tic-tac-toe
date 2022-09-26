@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./GameHistoryBoard.module.css";
 import { useContext } from "react";
 import GameContext from "../../GameContext";
 
-const GameHistoryBoard = () => {
+const GameHistoryBoard = ({setShowNav = () => ''}) => {
   const { gameHistory } = useContext(GameContext);
 
   const dummyObj = {
@@ -19,6 +19,10 @@ const GameHistoryBoard = () => {
   gameHistory.push(dummyObj);
   gameHistory.push(dummyObj);
   console.log(gameHistory);
+
+  useEffect(() => {
+    setShowNav(true)
+  }, []);
 
   return (
     <div className={styles.gamehistoryboard}>
