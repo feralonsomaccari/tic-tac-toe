@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Menu.module.css";
 import Button from "./Button";
 import Form from "./Form";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [player1, setPlayer1] = useState("");
@@ -28,8 +29,14 @@ const Home = () => {
         <Form inputName="player2" placeholder="Player 2" setInput={setPlayer2} />
 
         {/* Menu Options */}
-        <Button disabled={playDisabled}>PLAY</Button>
-        <Button>LEADERBOARD</Button>
+        <Link to="/game">
+          <Button disabled={playDisabled}>PLAY</Button>
+        </Link>
+        
+        <Link to="/gamehistoryboard">
+          <Button>LEADERBOARD</Button>
+        </Link>
+        
       </section>
     </article>
   );
