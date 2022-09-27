@@ -1,32 +1,11 @@
 .nav {
-    width: 100%;
-    padding-top: 20px;
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
 }
 
 .nav__link {
-    width: 120px;
-    height: 45px;
-    text-decoration: none;
-    box-sizing: border-box;
-    background-color: #bbae9f;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px #777067;
-    color: #fbf8ee;
-    margin-left: 20px;
-    border-radius: 8px;
+  width: 120px;
+  height: 45px;
+  text-decoration: none;
 }
-
-.nav__link:visited,
-.nav__link:link {
-    text-decoration: none;
-    box-shadow: 0px 4px #777067;
-    color: #fbf8ee;
-}
-
-.nav__link:active {
-    box-shadow: none;
-    position: relative;
-    top: 0.2em;
-  }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Menu.module.css";
-import Button from "./Button";
+import Button from "../Button/Button";
 import Form from "./Form";
 import { Link } from "react-router-dom";
 
