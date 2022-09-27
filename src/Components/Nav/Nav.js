@@ -11,8 +11,8 @@ const Nav = () => {
       <Link to="/game">
         <a className={styles.nav__link}>Game</a>
       </Link>
-      <Link to="/gamehistoryboard">
-        <a className={styles.nav__link}>Game History</a>
+      <Link to="/leaderboard">
+        <a className={styles.nav__link}>Leaderboard</a>
       </Link>
     </nav>
   );

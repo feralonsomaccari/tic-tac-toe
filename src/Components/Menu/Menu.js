@@ -34,7 +34,7 @@ const Menu = ({setShowNav = () => '', player1Name, setPlayerName1, player2Name, 
           <Button disabled={playDisabled}>PLAY</Button>
         </Link>
         
-        <Link to="/gamehistoryboard">
+        <Link to="/leaderboard">
           <Button>LEADERBOARD</Button>
         </Link>
         

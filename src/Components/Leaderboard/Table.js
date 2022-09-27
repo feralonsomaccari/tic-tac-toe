@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./GameHistoryBoard.module.css";
+import styles from "./Leaderboard.module.css";
 
 const Table = ({ headers, children }) => {
   return (
-    <table className={styles.gamehistoryboard__table}>
-      <thead className={styles.gamehistoryboard__tablehead}>
+    <table className={styles.leaderboard__table}>
+      <thead className={styles.leaderboard__tablehead}>
         {headers.map((header, index) => {
           return <th key={`${header}-${index}`}>{header}</th>;
         })}

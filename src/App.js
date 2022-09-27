@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GameHistoryBoard from "./Components/GameHistoryBoard/GameHistoryBoard";
+import Leaderboard from "./Components/Leaderboard/Leaderboard";
 import Menu from "./Components/Menu/Menu";
 import Game from "./Components/Game/Game";
 import { GameProvider } from "./GameContext";
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Menu setShowNav={setShowNav} player1Name={player1Name} setPlayerName1={setPlayerName1} player2Name={player2Name} setPlayerName2={setPlayerName2} />} />
             <Route path="/game" element={<Game setShowNav={setShowNav} player1Name={player1Name} player2Name={player2Name} />} />
-            <Route path="/gamehistoryboard" element={<GameHistoryBoard setShowNav={setShowNav}/>} />
+            <Route path="/leaderboard" element={<Leaderboard setShowNav={setShowNav}/>} />
           </Routes>
         </BrowserRouter>
       </GameProvider>
