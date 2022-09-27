@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-transform: capitalize;
 }
 
 .gamehistoryboard__table {
@@ -32,7 +33,6 @@
     background-color: #776e66;
     color: #fff;
     border-spacing: 8px 10px;
-
     border: none;
 }
 

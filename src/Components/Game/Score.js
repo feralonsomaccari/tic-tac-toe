@@ -9,7 +9,7 @@ const Score = ({ player1Name = '', player1Score = 0, player2Name = '', player2Sc
         <span data-testid='player1-score' id='player1-score'>{player1Score}</span>
       </p>
       <p className={styles.game__player} >
-        <span>TIE </span>
+        <span>Tie</span>
         <span data-testid='tie-score' id='tie-score'>{tieScore}</span>
       </p>
       <p className={styles.game__player} >
