@@ -14,10 +14,6 @@ const Game = ({ player1Name = "", player2Name = "", setShowNav = () => '' }) => 
 
   const { gameHistory, addToGameHistory } = useContext(GameContext);
 
-  useEffect(() => {
-    setShowNav(true)
-  }, []);
-
   const playScoreAnim = (scoreEl) => {
     scoreEl.classList.remove([styles['score-anim']]);
     setTimeout(() => {
@@ -57,12 +53,22 @@ const Game = ({ player1Name = "", player2Name = "", setShowNav = () => '' }) => 
     if (gameHistory.length) {
       const playersMatches = gameHistory.filter((game) => game.player1 === player1Name).filter((game) => game.player2 === player2Name);
       if(playersMatches){
+        const player1HistoryScore = playersMatches.filter(game => game.winner === player1Name) 
+        const player2HistoryScore = playersMatches.filter(game => game.winner === player2Name) 
+        const TieHistoryScore = playersMatches.filter(game => game.winner === 'TIE') 
+        setPlayer1Score(player1HistoryScore.length)
+        setPlayer2Score(player2HistoryScore.length)
+        setTieScore(TieHistoryScore.length)
         const lastGame = playersMatches.reverse()[0];
         if (lastGame?.winner === player2Name) {
           swapPlayersMark();
         }
       }
     }
+  }, []);
+
+  useEffect(() => {
+    setShowNav(true)
   }, []);
 
   return (
