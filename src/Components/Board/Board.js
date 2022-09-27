@@ -9,7 +9,7 @@ const BOARD_LAYOUT = [
   null, null, null,
 ]
 
-const Board = ({swapPlayersMark = () => '', updateHistory = () => ''}) => {
+const Board = ({updateHistory = () => ''}) => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [board, setBoard] = useState(BOARD_LAYOUT);
   const [isGameOver, setIsGameOver] = useState(false)
@@ -31,7 +31,6 @@ const Board = ({swapPlayersMark = () => '', updateHistory = () => ''}) => {
     setCurrentPlayer('X')
     setWinningLine([])
     setGameCounter(counter => counter + 1)
-    swapPlayersMark()
   }
 
   /* Check victory after every move */

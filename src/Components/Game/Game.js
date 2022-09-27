@@ -79,10 +79,7 @@ const Game = ({ player1Name = "", player2Name = "", setShowNav = () => '' }) => 
       />
 
       {/* Tic tac toe Board */}
-      <Board
-        updateHistory={updateHistory}
-        swapPlayersMark={swapPlayersMark}
-      />
+      <Board updateHistory={updateHistory} />
     </article>
   );
 };
