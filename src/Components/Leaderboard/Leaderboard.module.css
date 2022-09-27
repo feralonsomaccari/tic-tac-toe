@@ -3,42 +3,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-transform: capitalize;
 }
 
 .leaderboard__table {
-    border-collapse: collapse;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  text-transform: capitalize;
 }
 
 .leaderboard__table tr {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 1.2em;
-    font-family: sans-serif;
-    min-width: 400px;
-    text-align: center;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  min-width: 400px;
+  text-align: center;
 }
 
 .leaderboard__table th,
 .leaderboard__table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .leaderboard__tablehead {
-    font-family: "Fredoka One", cursive;
-    background-color: #776e66;
-    color: #fff;
-    border-spacing: 8px 10px;
-    border: none;
+  font-family: "Fredoka One", cursive;
+  background-color: #776e66;
+  color: #fff;
+  border-spacing: 8px 10px;
+  border: none;
 }
 
 .leaderboard tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .leaderboard tbody tr:nth-of-type(even) {
-    background-color: #cdbeaf;
+  background-color: #cdbeaf;
 }

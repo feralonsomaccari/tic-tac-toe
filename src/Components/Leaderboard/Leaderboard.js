@@ -62,7 +62,12 @@ const Leaderboard = ({ setShowNav = () => "" }) => {
             })}
           </Table>
         </>
-      ) : null}
+      ) : (
+        <>
+          <span>No games has been found</span>
+          <span>You will see your games here after you playe some :)</span>
+        </>
+      )}
     </section>
   );
 };
