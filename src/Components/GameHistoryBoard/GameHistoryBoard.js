@@ -21,28 +21,31 @@ const GameHistoryBoard = ({ setShowNav = () => "" }) => {
     gameHistory.forEach((game) => {
       players[game.winner].wins += 1;
     });
-    console.log(gameHistory)
+    console.log(gameHistory);
     setLeaderboard(players);
   }, []);
 
   return (
     <div className={styles.gamehistoryboard}>
       <h1>LEADERBOARD</h1>
-      {leaderboard &&
-        Object.keys(leaderboard).map((player) => {
+
+      <Table headers={["Players", "Wins"]}>
+        {Object.keys(leaderboard).map((player, index) => {
           return (
-            <div>
-              <span>{player}: </span>
-              <span>{leaderboard[player].wins}</span>
-            </div>
+            <tr className={styles.gamehistoryboard__element} key={`${player}-${index}`}>
+              <td>{player}</td>
+              <td>{leaderboard[player].wins}</td>
+            </tr>
           );
         })}
+      </Table>
+
       <h2>Game History Board</h2>
       {gameHistory.length && (
         <Table headers={["Players", "Winner", "Winner Mark"]}>
           {gameHistory.map((game, index) => {
             return (
-              <tr className={styles.gamehistoryboard__element} key={index}>
+              <tr className={styles.gamehistoryboard__element} key={`${game.winner}-${index}`}>
                 <td>
                   {game.player1} vs {game.player2}
                 </td>
