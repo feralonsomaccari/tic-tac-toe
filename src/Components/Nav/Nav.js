@@ -6,10 +6,13 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <Link to="/">
-        <button>Menu</button>
+        <a className={styles.nav__link}>Menu</a>
+      </Link>
+      <Link to="/game">
+        <a className={styles.nav__link}>Game</a>
       </Link>
       <Link to="/gamehistoryboard">
-        <button>Game History</button>
+        <a className={styles.nav__link}>Game History</a>
       </Link>
     </nav>
   );
