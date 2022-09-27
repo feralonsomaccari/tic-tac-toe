@@ -7,8 +7,9 @@
 }
 
 .nav__link {
-  width: 120px;
+  width: 100px;
   height: 45px;
+  font-size: 0.7em;
   text-decoration: none;
 }
 
@@ -21,9 +22,11 @@
     justify-content: start;
     gap: 20px;
   }
-  .nav__link {
-    width: 140px;
-    font-size: 1em;
-  }
 
+  .nav__link {
+    width: 100px;
+    height: 45px;
+    font-size: 0.7em;
+    text-decoration: none;
+  }
 }
