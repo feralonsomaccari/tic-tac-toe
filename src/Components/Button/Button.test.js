@@ -11,12 +11,12 @@ describe("<Button/>", () => {
   it("should render a Disabled button", () => {
     render(<Button disabled={true} />);
     const buttonEl = screen.getByRole("button");
-    expect(buttonEl).toHaveClass("menu__boton--disabled");
+    expect(buttonEl).toHaveClass("button button--disabled");
   });
 
   it("should render a Enabled button", () => {
     render(<Button disabled={false} />);
     const buttonEl = screen.getByRole("button");
-    expect(buttonEl).not.toHaveClass("menu__boton--disabled");
+    expect(buttonEl).not.toHaveClass("button button--disabled");
   });
 });
