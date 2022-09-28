@@ -7,4 +7,11 @@ describe("<Leaderboard/>", () => {
   it("should render Leaderboard component", () => {
     render(<Leaderboard />, { wrapper: GameProvider });
   });
+
+  it("should not render the tables", () => {
+    render(<Leaderboard />, { wrapper: GameProvider });
+
+    const noTablesContent = screen.getByTestId("no-tables");
+    expect(noTablesContent).toBeInTheDocument();
+  });
 });
