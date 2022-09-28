@@ -43,7 +43,7 @@ const Leaderboard = ({ setShowNav = () => "" }) => {
             })}
           </Table>
 
-          <h2>Game History</h2>
+          <h2>GAME HISTORY</h2>
           <Table headers={["Players", "Winner", "Winner Mark"]}>
             {gameHistory.map((game, index) => {
               return (
@@ -64,7 +64,7 @@ const Leaderboard = ({ setShowNav = () => "" }) => {
       ) : (
         <>
           <span>No games has been found</span>
-          <span>You will see your games here after you playe some :)</span>
+          <span>You will see your games here after you play some :)</span>
         </>
       )}
     </section>
