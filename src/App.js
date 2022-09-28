@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
 
 function App() {
-  const [showNav, setShowNav] = useState(true);
+  const [showNav, setShowNav] = useState(false);
   const [player1Name, setPlayerName1] = useState("");
   const [player2Name, setPlayerName2] = useState("");
 
