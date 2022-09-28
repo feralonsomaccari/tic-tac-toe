@@ -5,7 +5,7 @@ import Form from "./Form";
 import { Link } from "react-router-dom";
 import {validateNames} from './_utils'
 
-const Menu = ({setShowNav = () => '', player1Name, setPlayerName1, player2Name, setPlayerName2}) => {
+const Menu = ({setShowNav = () => '', player1Name = '', setPlayerName1, player2Name = '', setPlayerName2}) => {
   const [playDisabled, setPlayDisabled] = useState(false);
 
   useEffect(() => {
