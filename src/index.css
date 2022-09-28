@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Fredoka One'; 
+  src: url('./fredoka-one.woff2'); 
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
