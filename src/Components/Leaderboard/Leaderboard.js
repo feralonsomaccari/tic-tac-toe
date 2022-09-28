@@ -63,7 +63,7 @@ const Leaderboard = ({ setShowNav = () => "" }) => {
         </>
       ) : (
         <div data-testid='no-tables'>
-          <span>No games has been found</span>
+          <span>No games has been found. </span>
           <span>You will see your games here after you play some :)</span>
         </div>
       )}
