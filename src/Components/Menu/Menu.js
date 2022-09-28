@@ -3,6 +3,7 @@ import styles from "./Menu.module.css";
 import Button from "../Button/Button";
 import Form from "./Form";
 import { Link } from "react-router-dom";
+import {validateNames} from './_utils'
 
 const Menu = ({setShowNav = () => '', player1Name, setPlayerName1, player2Name, setPlayerName2}) => {
   const [playDisabled, setPlayDisabled] = useState(false);
@@ -12,10 +13,10 @@ const Menu = ({setShowNav = () => '', player1Name, setPlayerName1, player2Name, 
   }, []);
 
   useEffect(() => {
-    if (!player1Name.length || !player2Name.length) {
-      setPlayDisabled(true);
-    } else {
+    if (validateNames(player1Name, player2Name)) {
       setPlayDisabled(false);
+    } else {
+      setPlayDisabled(true);
     }
   }, [player1Name, player2Name]);
 
