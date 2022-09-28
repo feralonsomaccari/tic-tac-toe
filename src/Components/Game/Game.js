@@ -4,6 +4,7 @@ import Board from "../Board/Board";
 import Score from "./Score";
 import { useContext } from "react";
 import GameContext from "../../GameContext";
+import { Navigate } from 'react-router-dom';
 
 const Game = ({ player1Name = "", player2Name = "", setShowNav = () => '' }) => {
   const [player1Mark, setPlayer1Mark] = useState("X");
@@ -70,6 +71,11 @@ const Game = ({ player1Name = "", player2Name = "", setShowNav = () => '' }) => 
   useEffect(() => {
     setShowNav(true)
   }, []);
+
+  /* Game view should not be accesible if there are no players */
+  if(!player1Name || !player2Name){
+    return <Navigate to="/" />
+  }
 
   return (
     <article className={styles.game}>

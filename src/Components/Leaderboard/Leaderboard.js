@@ -21,7 +21,6 @@ const Leaderboard = ({ setShowNav = () => "" }) => {
     gameHistory.forEach((game) => {
       players[game.winner].wins += 1;
     });
-    console.log(gameHistory);
     setLeaderboard(players);
   }, []);
 

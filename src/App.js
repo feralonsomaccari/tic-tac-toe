@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <GameProvider>
         <BrowserRouter>
-            {showNav && <Nav></Nav>}
+            {showNav && <Nav player1Name={player1Name} player2Name={player2Name}></Nav>}
           <Routes>
             <Route path="/" element={<Menu setShowNav={setShowNav} player1Name={player1Name} setPlayerName1={setPlayerName1} player2Name={player2Name} setPlayerName2={setPlayerName2} />} />
             <Route path="/game" element={<Game setShowNav={setShowNav} player1Name={player1Name} player2Name={player2Name} />} />
