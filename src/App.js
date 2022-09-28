@@ -3,7 +3,7 @@ import Leaderboard from "./Components/Leaderboard/Leaderboard";
 import Menu from "./Components/Menu/Menu";
 import Game from "./Components/Game/Game";
 import { GameProvider } from "./GameContext";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
 
 function App() {
@@ -14,14 +14,14 @@ function App() {
   return (
     <div className="App">
       <GameProvider>
-        <HashRouter>
+        <BrowserRouter>
             {showNav && <Nav player1Name={player1Name} player2Name={player2Name}></Nav>}
           <Routes>
             <Route path="/" element={<Menu setShowNav={setShowNav} player1Name={player1Name} setPlayerName1={setPlayerName1} player2Name={player2Name} setPlayerName2={setPlayerName2} />} />
             <Route path="/game" element={<Game setShowNav={setShowNav} player1Name={player1Name} player2Name={player2Name} />} />
             <Route path="/leaderboard" element={<Leaderboard setShowNav={setShowNav}/>} />
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </GameProvider>
     </div>
   );
