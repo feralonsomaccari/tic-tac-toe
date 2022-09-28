@@ -12,11 +12,11 @@ const checkVictory = (player, board) => {
     for (let j = 0; j < 9; j++) {
       // Diagonals
       for (let k = 0; k < 9; k++) {
-        if (i != j && i != k && j != k) {
+        if (i !== j && i !== k && j !== k) {
           // Does a Player owns a line?
-          if (board[i] == player && board[j] == player && board[k] == player) {
+          if (board[i] === player && board[j] === player && board[k] === player) {
             // Is that line equal to the magic number?
-            if (magicSquare[i] + magicSquare[j] + magicSquare[k] == 15) {
+            if (magicSquare[i] + magicSquare[j] + magicSquare[k] === 15) {
               return [i, j, k];
             }
           }
