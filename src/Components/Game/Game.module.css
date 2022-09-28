@@ -14,26 +14,26 @@
   color: #776e66;
   font-size: 0.9em;
   gap: 15px;
-  margin: 30px 0;
 }
 
 .game__player span {
   display: block;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  font-size: 1.2em;
 }
 
 .game__player span.X {
-  color:#f59564
+  color: #f59564;
 }
 
 .game__player span.O {
   color: #7764f5;
 }
 
-.game__player span.score-anim{
+.game__player span.score-anim {
   will-change: transform;
-  animation: increment .5s 1 cubic-bezier(0.5, 1.8, 0.1, 1.1) ;
+  animation: increment 0.5s 1 cubic-bezier(0.5, 1.8, 0.1, 1.1);
 }
 
 @media only screen and (min-width: 620px) {
