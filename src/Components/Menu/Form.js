@@ -8,6 +8,7 @@ const Form = ({ value = '', placeholder, setInput = () => '' }) => {
       onChange={(e) => setInput(e.target.value)}
       placeholder={placeholder}
       value={value}
+      maxlength="10"
     ></input>
   );
 };
