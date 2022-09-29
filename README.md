@@ -2,7 +2,10 @@
 
 This is a 2-players Tic-Tac-Toe game made with React.
 
-https://en.wikipedia.org/wiki/Tic-tac-toe
+
+**You can play it here:** https://feralonsomaccari.github.io/tic-tac-toe/
+
+**or you can also set it up locally**
 
 ## Description
 
