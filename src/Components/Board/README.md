@@ -1,4 +1,4 @@
-# Menu Component
+# Board Component
 
 This is the Board component. 
 

@@ -1,4 +1,4 @@
-# Menu Component
+# Button Component
 
 This is the Button component
 

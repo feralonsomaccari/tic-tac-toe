@@ -1,4 +1,4 @@
-# Menu Component
+# Game Component
 
 This is the Game component. 
 
